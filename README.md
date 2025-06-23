@@ -287,60 +287,6 @@ const messages = await session.getSession("user");
 // Returns only messages 2, 3, and 4 with their responses
 ```
 
-## 🔧 Advanced Usage
-
-### Custom Storage Backend
-```javascript
-import { Store, Message } from 'sessionkit';
-
-class CustomStore implements Store {
-  async addMessage(userId: string, message: Message): Promise<void> {
-    // Your custom storage logic
-  }
-  
-  async getSession(userId: string): Promise<Message[]> {
-    // Your custom retrieval logic
-  }
-  
-  async resetSession(userId: string): Promise<void> {
-    // Your custom reset logic
-  }
-  
-  async trimSession(userId: string, memoryWindow: number): Promise<void> {
-    // Your custom trimming logic
-  }
-}
-
-const session = new SessionManager({
-  store: new CustomStore()
-});
-```
-
-### Dynamic Memory Window
-```javascript
-const session = new SessionManager({ memoryWindow: 5 });
-
-// Adjust memory window based on conversation type
-if (conversationType === 'technical') {
-  session.setMemoryWindow(10); // Keep more context for technical discussions
-} else {
-  session.setMemoryWindow(3);  // Less context for casual chat
-}
-```
-
-### Multi-tenant Applications
-```javascript
-const session = new SessionManager({
-  store: new UpstashStore({
-    url: process.env.UPSTASH_URL,
-    token: process.env.UPSTASH_TOKEN,
-    keyPrefix: `tenant:${tenantId}:` // Namespace by tenant
-  })
-});
-```
-
-## 🏗️ Production Deployment
-
 ### Environment Variables
 ```bash
 # For Upstash Redis
@@ -352,19 +298,6 @@ REDIS_URL=redis://localhost:6379
 REDIS_PASSWORD=your-password
 ```
 
-### Error Handling
-```javascript
-try {
-  const messages = await session.getSession(userId);
-  const response = await openai.chat.completions.create({ messages });
-  await session.addAssistantMessage(userId, response.choices[0].message.content);
-} catch (error) {
-  console.error('Chat session error:', error);
-  // Graceful fallback - session operations are isolated
-}
-```
-
-### Connection Cleanup
 ```javascript
 // For Redis-based stores, clean up connections
 const redisStore = new RedisStore({ host: "localhost" });
@@ -379,14 +312,6 @@ await redisStore.disconnect();
 ### Basic Installation
 ```bash
 npm install sessionkit
-```
-
-### With AI Providers
-```bash
-# Choose your AI provider
-npm install sessionkit openai                    # OpenAI
-npm install sessionkit @anthropic-ai/sdk        # Claude  
-npm install sessionkit @google/generative-ai    # Gemini
 ```
 
 ### With Persistent Storage
@@ -451,7 +376,7 @@ node example.js  # Test the examples
 
 ## 🤝 Contributing
 
-We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
+We welcome contributions! 
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/amazing-feature`)
@@ -459,18 +384,14 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
 - Built for the AI development community
 - Inspired by the need for simple session management
-- Thanks to all contributors and users
 
 ---
 
-**Built with ❤️ for AI developers**
+**Built with ❤️ for Vibe coders**
 
 [npm](https://www.npmjs.com/package/sessionkit) • [GitHub](https://github.com/your-username/sessionkit) • [Documentation](https://github.com/your-username/sessionkit#readme) • [Issues](https://github.com/your-username/sessionkit/issues) 
