@@ -1,0 +1,44 @@
+{
+  "name": "sessionkit",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Session memory management SDK for any AI tool with configurable memory windows and multiple storage backends",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "type": "module",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ai",
+    "session",
+    "memory",
+    "chat",
+    "openai",
+    "claude",
+    "redis",
+    "session-management"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@upstash/redis": "^1.35.0",
+    "ioredis": "^5.6.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.8.3"
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  }
+}
