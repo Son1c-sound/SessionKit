@@ -100,11 +100,6 @@ const session = new SessionManager({
 
 ### SessionManager
 
-#### Constructor
-```typescript
-new SessionManager(config?: SessionConfig)
-```
-
 **SessionConfig:**
 - `memoryWindow?: number` - Number of message pairs to keep (default: 10)
 - `store?: Store` - Storage backend (default: InMemoryStore)
