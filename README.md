@@ -1,4 +1,4 @@
-# SessionKit 🧠
+# SessionKit
 
 **Simple conversation memory for AI chat apps**
 
@@ -8,7 +8,7 @@ SessionKit automatically saves and manages conversation history for any AI API (
 npm install sessionkit
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ```javascript
 import { SessionManager } from 'sessionkit';
@@ -35,15 +35,15 @@ await session.addAssistantMessage('user123', response.choices[0].message.content
 // Next message will include full conversation history!
 ```
 
-## ✨ What SessionKit Does
+## What SessionKit Does
 
-- **🧠 Saves conversation history** - User messages + AI responses automatically stored
-- **💬 Remembers context** - AI sees previous messages for better responses  
-- **✂️ Auto-trims conversations** - Keeps only last N conversation pairs
-- **👥 Multi-user support** - Separate conversation history per user
-- **🔌 Works with any AI** - Returns standard message format
+- **Saves conversation history** - User messages + AI responses automatically stored
+- **Remembers context** - AI sees previous messages for better responses  
+- **Auto-trims conversations** - Keeps only last N conversation pairs
+- **Multi-user support** - Separate conversation history per user
+- **Works with any AI** - Returns standard message format
 
-## 🏗️ Storage Options
+## Storage Options
 
 **InMemory (Default)**
 ```javascript
@@ -65,7 +65,7 @@ const session = new SessionManager({
 // Conversations survive server restarts
 ```
 
-## 📚 API
+## API
 
 ### Main Methods
 ```javascript
@@ -85,7 +85,7 @@ await session.resetSession(userId);
 - `memoryWindow: 10` = Keep last 10 conversation pairs (20 total messages)
 - Older messages automatically deleted when limit reached
 
-## 💡 Examples
+## Examples
 
 ### Express Server with Conversation Memory
 ```javascript
@@ -133,7 +133,7 @@ await anthropic.messages.create({ messages, model: 'claude-3' });
 await gemini.generateContent({ messages });
 ```
 
-## 🔧 TypeScript Support
+## TypeScript Support
 
 Full TypeScript support included:
 
@@ -144,7 +144,7 @@ interface Message {
 }
 ```
 
-## 📦 What You Get
+## What You Get
 
 - **Automatic conversation memory** 
 - **Multi-user session management**
@@ -155,4 +155,4 @@ interface Message {
 
 ---
 
-**That's it!** Install, set memory window, and your AI will remember conversations automatically. 🎯
+**That's it!** Install, set memory window, and your AI will remember conversations automatically.
