@@ -8,17 +8,17 @@ A lightweight, TypeScript-ready SDK that manages conversation history with confi
 [![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue.svg)](https://www.typescriptlang.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## ✨ Features
+## Features
 
-- 🎯 **Universal AI Support** - Works with OpenAI, Claude, Gemini, or any chat API
-- 🧠 **Smart Memory Management** - Configurable memory windows (keep last N message pairs)
-- 💾 **Multiple Storage Backends** - InMemory (default), Upstash Redis, or traditional Redis
-- 🔄 **Simple API** - Just 3 main methods: `sendMessage`, `getSession`, `resetSession`
-- 🚀 **TypeScript Ready** - Full type safety with zero `any` types
-- ⚡ **Zero Config** - Works immediately with sensible defaults
-- 🔌 **Pluggable Architecture** - Easy to extend with custom storage backends
+- **Universal AI Support** - Works with OpenAI, Claude, Gemini, or any chat API
+- **Smart Memory Management** - Configurable memory windows (keep last N message pairs)
+- **Multiple Storage Backends** - InMemory (default), Upstash Redis, or traditional Redis
+- **Simple API** - Just 3 main methods: `sendMessage`, `getSession`, `resetSession`
+- **TypeScript Ready** - Full type safety with zero `any` types
+- **Zero Config** - Works immediately with sensible defaults
+- **Pluggable Architecture** - Easy to extend with custom storage backends
 
-## 🚀 Quick Start
+## Quick Start
 
 ```bash
 npm install sessionkit
